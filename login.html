@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student login | IOSSS</title>
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth">
+<div class="auth-layout">
+
+    <aside class="auth-aside">
+        <div>
+            <a class="brand" href="index.html">
+                <span class="brand-logo">I</span>
+                <span class="brand-text">IOSSS<small>Student portal</small></span>
+            </a>
+        </div>
+        <div>
+            <h1>Welcome <em>back</em>.</h1>
+            <p>Sign in with your index number to complete your application, follow your progress and see your placement.</p>
+        </div>
+        <ul class="auth-points">
+            <li><span class="icon-dot"></span>Edit your school choices until applications close</li>
+            <li><span class="icon-dot"></span>See when your marks are received</li>
+            <li><span class="icon-dot"></span>View your result as soon as it is published</li>
+        </ul>
+        <a class="auth-back" href="index.html">&larr; Back to the home page</a>
+    </aside>
+
+    <main class="auth-main">
+        <div class="auth-card">
+            <h2>Student login</h2>
+            <p class="sub">Use the index number and password you chose when you signed up.</p>
+
+            <div id="message" hidden></div>
+
+            <form action="php/student_login_process.php" method="post">
+                <div class="field">
+                    <label for="index_no">Index number</label>
+                    <input type="text" id="index_no" name="index_no" autocomplete="username" required autofocus>
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password" name="password" autocomplete="current-password" required>
+                        <button type="button" class="password-toggle" data-toggle-password="#password" aria-pressed="false">Show</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            </form>
+
+            <p class="auth-switch">New here? <a href="iosss_application.html"><strong>Create an account</strong></a></p>
+            <p class="auth-switch">Forgot your password? Ask the administrator to reset it.</p>
+            <p class="auth-switch">School or ministry staff? <a href="staff/login.html">Go to the staff portal</a></p>
+        </div>
+    </main>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

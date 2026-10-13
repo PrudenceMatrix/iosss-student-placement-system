@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register and apply | IOSSS</title>
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth">
+<div class="auth-layout">
+
+    <aside class="auth-aside">
+        <div>
+            <a class="brand" href="index.html">
+                <span class="brand-logo">I</span>
+                <span class="brand-text">IOSSS<small>Student application</small></span>
+            </a>
+        </div>
+        <div>
+            <h1>Register and <em>apply</em>.</h1>
+            <p>Fill in your details and rank three schools. You will use your index number and password to follow your progress and see your result.</p>
+        </div>
+        <ul class="auth-points">
+            <li><span class="icon-dot"></span>You do not enter marks. The administrator uploads them.</li>
+            <li><span class="icon-dot"></span>Change your choices any time before applications close</li>
+            <li><span class="icon-dot"></span>One registration per index number</li>
+        </ul>
+        <a class="auth-back" href="index.html">&larr; Back to the home page</a>
+    </aside>
+
+    <main class="auth-main">
+        <div class="auth-card auth-card-wide">
+            <h2>Student application</h2>
+            <p class="sub">Already registered? <a href="login.html">Sign in</a></p>
+
+            <div id="window-note" hidden></div>
+
+            <form action="php/iosss_app_process.php" method="post" id="applicationForm">
+
+                <fieldset>
+                    <legend>Candidate details</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="index_no">Index number</label>
+                            <input type="text" id="index_no" name="index_no" maxlength="20" autocomplete="username" required>
+                            <p class="hint">Exactly as printed on your exam slip.</p>
+                        </div>
+                        <div class="field">
+                            <label for="full_name">Full name</label>
+                            <input type="text" id="full_name" name="full_name" maxlength="100" autocomplete="name" required>
+                            <p class="hint">At least two names.</p>
+                        </div>
+                        <div class="field">
+                            <label for="sex">Sex</label>
+                            <select id="sex" name="sex" required>
+                                <option value="">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="date_of_birth">Date of birth</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" required>
+                        </div>
+                        <div class="field">
+                            <label for="primary_school">Primary school</label>
+                            <input type="text" id="primary_school" name="primary_school" maxlength="100" required>
+                            <p class="hint">The school you sat the exam from.</p>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone number <span class="optional">(optional)</span></label>
+                            <input type="tel" id="phone" name="phone" maxlength="20" inputmode="tel" placeholder="0712 345 678">
+                            <p class="hint">A parent or guardian's number.</p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset data-unique-selects>
+                    <legend>Schools you are applying to</legend>
+                    <p class="hint">Rank three different schools, best first. Everyone's 1st choice is considered first, then the 2nd, then the 3rd.</p>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="choice1">1st choice</label>
+                            <select id="choice1" name="choice1" required><option value="">Loading schools...</option></select>
+                        </div>
+                        <div class="field">
+                            <label for="choice2">2nd choice</label>
+                            <select id="choice2" name="choice2" required><option value="">Loading schools...</option></select>
+                        </div>
+                        <div class="field">
+                            <label for="choice3">3rd choice</label>
+                            <select id="choice3" name="choice3" required><option value="">Loading schools...</option></select>
+                        </div>
+                    </div>
+                    <p class="error-text" data-unique-error role="alert"></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Create your password</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <div class="password-wrap">
+                                <input type="password" id="password" name="password" minlength="8" maxlength="72" autocomplete="new-password" required>
+                                <button type="button" class="password-toggle" data-toggle-password="#password" aria-pressed="false">Show</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="password_confirm">Confirm password</label>
+                            <input type="password" id="password_confirm" name="password_confirm" minlength="8" maxlength="72" autocomplete="new-password" required>
+                        </div>
+                    </div>
+                    <ul class="rules" aria-live="polite">
+                        <li data-rule="len">At least 8 characters</li>
+                        <li data-rule="letter">Contains a letter</li>
+                        <li data-rule="digit">Contains a digit</li>
+                        <li data-rule="match">Both passwords match</li>
+                    </ul>
+                </fieldset>
+
+                <!-- Spam trap: people never see or fill this -->
+                <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block">Submit application</button>
+            </form>
+        </div>
+    </main>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/register.js"></script>
+</body>
+</html>

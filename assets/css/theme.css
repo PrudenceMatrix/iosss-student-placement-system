@@ -1,0 +1,64 @@
+/* =====================================================================
+   THEME  -  edit this file to re-colour or re-size the whole system.
+   Every colour, font, corner radius and shadow is a variable here.
+   Change a value and refresh the page; style.css never hard-codes them.
+   ===================================================================== */
+
+/* ---------- Fonts (optional) ----------
+   The three .woff2 files live in assets/fonts/. If they are missing the
+   browser quietly falls back to the system fonts listed below. */
+@font-face { font-family: "Figtree"; src: url("../fonts/figtree-latin-wght-normal.woff2") format("woff2"); font-weight: 300 900; font-display: swap; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "DM Mono"; src: url("../fonts/dm-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DM Mono"; src: url("../fonts/dm-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+:root {
+    /* ---------- BRAND: the main green ---------- */
+    --brand:        #0e7a45;   /* buttons, links, highlights */
+    --brand-strong: #0a5a33;   /* hover / dark green areas */
+    --brand-deep:   #07402a;   /* hero background, darkest green */
+    --brand-soft:   #e2f4ea;   /* pale green fills */
+
+    /* ---------- ACCENT: the gold that makes things pop ---------- */
+    --accent:        #f5b301;
+    --accent-strong: #d99a00;
+    --accent-soft:   #fff4cc;
+    --on-accent:     #2a1d00;  /* text that sits on gold */
+
+    /* ---------- NEUTRALS: text, lines, backgrounds ---------- */
+    --ink:       #12261b;      /* main text */
+    --ink-soft:  #52665a;      /* secondary text */
+    --line:      #dbe6df;      /* borders and dividers */
+    --bg:        #f4f8f5;      /* page background */
+    --surface:   #ffffff;      /* cards */
+
+    /* ---------- STAFF PORTAL: dark sidebar and login ---------- */
+    --staff-bg:         #0c1a13;
+    --staff-bg-hover:   #172b20;
+    --staff-ink:        #e9f3ed;
+    --staff-ink-soft:   #93ab9c;
+    --staff-line:       #22392c;
+
+    /* ---------- STATUS colours (badges, alerts, steps) ---------- */
+    --success:      #0f7a41;  --success-soft: #def5e8;
+    --warning:      #8f5200;  --warning-soft: #fff0d2;
+    --danger:       #b92f26;  --danger-soft:  #fde7e4;
+    --info:         #1a5fbd;  --info-soft:    #e2edfb;
+
+    /* ---------- TYPE ---------- */
+    --font-heading: "Bricolage Grotesque", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    --font-body:    "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono:    "DM Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --text-base:    1.0625rem;  /* 17px */
+
+    /* ---------- SHAPE ---------- */
+    --radius:     16px;         /* cards */
+    --radius-sm:  10px;         /* buttons, inputs */
+    --shadow-sm:  0 1px 2px rgba(10, 40, 25, .06), 0 2px 8px rgba(10, 40, 25, .05);
+    --shadow-md:  0 4px 14px rgba(10, 40, 25, .10), 0 12px 32px rgba(10, 40, 25, .08);
+    --focus-ring: 0 0 0 4px rgba(14, 122, 69, .28);
+
+    /* ---------- LAYOUT ---------- */
+    --container:  1120px;
+    --sidebar-w:  260px;
+}

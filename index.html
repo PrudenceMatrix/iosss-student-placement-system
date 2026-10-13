@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IOSSS | Integrated Secondary Students Selection System</title>
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-inner">
+        <a class="brand" href="index.html">
+            <span class="brand-logo">I</span>
+            <span class="brand-text">IOSSS<small>Secondary Students Selection</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="#dates">Key dates</a>
+            <a href="#how">How it works</a>
+            <a href="#schools">Schools</a>
+            <a href="#faq">FAQ</a>
+            <a href="staff/login.html" class="nav-staff">Staff portal</a>
+            <a href="login.html" class="btn btn-ghost">Student login</a>
+            <a href="iosss_application.html" class="btn btn-accent">Create account</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-copy">
+                <span class="chip" id="cycle-chip">Loading dates...</span>
+                <h1>Your place in <em>Form One</em>, decided fairly.</h1>
+                <p class="lead">Create an account, choose three schools, and let the system place every candidate by choice and aggregate. Follow your progress and see your result from any phone.</p>
+
+                <div class="countdown" id="countdown" hidden>
+                    <div><strong id="cd-days">0</strong><span>days</span></div>
+                    <div><strong id="cd-hours">0</strong><span>hours</span></div>
+                    <div><strong id="cd-mins">0</strong><span>minutes</span></div>
+                </div>
+
+                <div class="row">
+                    <a class="btn btn-accent btn-lg" id="hero-apply" href="iosss_application.html">Create account and apply</a>
+                    <a class="btn btn-ghost btn-lg" href="login.html">Student login</a>
+                </div>
+            </div>
+
+            <div class="hero-photo" role="img" aria-label="Secondary school students in uniform">
+                <!-- Save a photo as assets/img/students.jpg (see assets/img/READ-ME.txt) -->
+                <div class="hero-card">
+                    <small id="cycle-line">Selection cycle</small>
+                    <strong id="cycle-title">Loading...</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="strip" aria-label="At a glance">
+        <div class="container strip-grid">
+            <div class="strip-item"><strong id="stat-apps">0</strong><span>Applications received</span></div>
+            <div class="strip-item"><strong id="stat-schools">0</strong><span>Schools to choose from</span></div>
+            <div class="strip-item"><strong id="stat-seats">0</strong><span>Seats available</span></div>
+        </div>
+    </section>
+
+    <section class="section reveal" id="dates">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Key dates</span>
+                <h2>Know exactly where we are in the cycle</h2>
+                <p>Dates are set by the Ministry and update here the moment they change.</p>
+            </div>
+            <ol class="dates" id="dates-list"></ol>
+        </div>
+    </section>
+
+    <section class="section section-alt reveal" id="how">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">How it works</span>
+                <h2>Four steps from sign-up to result</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-no">1</div><h3>Create your account</h3><p>Sign up with your index number and a password. It takes under a minute.</p></div>
+                <div class="step-card"><div class="step-no">2</div><h3>Apply</h3><p>Add your personal details and rank three schools while applications are open. You can edit until they close.</p></div>
+                <div class="step-card"><div class="step-no">3</div><h3>Marks are uploaded</h3><p>Your examination marks are loaded by the administrator. You never type them, so they cannot be changed by anyone else.</p></div>
+                <div class="step-card"><div class="step-no">4</div><h3>Selection and results</h3><p>Candidates are placed in three rounds. When results are published, sign in to see your school.</p></div>
+            </div>
+
+            <div class="rounds">
+                <div class="round"><small>Round 1</small><strong>Everyone's 1st choice</strong><p>For each school, candidates who chose it first are ranked by aggregate. The highest fill the seats.</p></div>
+                <div class="round"><small>Round 2</small><strong>2nd choice for the rest</strong><p>Candidates still without a seat are considered for their 2nd choice, again highest aggregate first.</p></div>
+                <div class="round"><small>Round 3</small><strong>3rd choice, last chance</strong><p>The remaining seats go to the best of those who chose that school third. Nobody is placed twice.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal" id="schools">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Schools</span>
+                <h2>Schools you can choose from</h2>
+                <p>Every school has a fixed number of seats.</p>
+            </div>
+            <div class="schools-grid" id="schools-grid"></div>
+        </div>
+    </section>
+
+    <section class="section section-alt reveal" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Questions</span>
+                <h2>Things candidates ask</h2>
+            </div>
+            <div class="faq">
+                <details><summary>Who enters my marks?</summary><p>The system administrator uploads marks from the examination records. You only enter your personal details and your school choices, so nobody can type in a better score.</p></details>
+                <details><summary>Can I change my school choices?</summary><p>Yes, as many times as you like while applications are open. After the closing date your application is locked.</p></details>
+                <details><summary>When will I see my result?</summary><p>After selection runs, the administrator publishes the results. The expected date is shown under key dates, and your dashboard shows your result the moment it is published.</p></details>
+                <details><summary>I forgot my password. What do I do?</summary><p>Ask the administrator to reset it. You will be given a temporary password to sign in with.</p></details>
+                <details><summary>What if I am not placed?</summary><p>Your dashboard will say so. It means the seats in all three schools you chose went to candidates with higher aggregates. Contact your sub-county education office about other options.</p></details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-row">
+        <span>IOSSS &middot; Integrated Secondary Students Selection System</span>
+        <span><a href="staff/login.html">Staff portal</a></span>
+    </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

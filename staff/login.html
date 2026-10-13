@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff portal | IOSSS</title>
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="auth-staff">
+<div class="staff-card">
+    <a class="brand" href="../index.html">
+        <span class="brand-logo">I</span>
+        <span class="brand-text">IOSSS<small>Staff portal</small></span>
+    </a>
+
+    <div class="staff-panel">
+        <span class="staff-tag">Authorised staff only</span>
+        <h1>Staff sign in</h1>
+        <p class="sub">For the system administrator and school administrators.</p>
+
+        <div id="message" hidden></div>
+
+        <form action="../php/staff_login_process.php" method="post">
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required autofocus>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <div class="password-wrap">
+                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                    <button type="button" class="password-toggle" data-toggle-password="#password" aria-pressed="false">Show</button>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-block">Sign in to the portal</button>
+        </form>
+    </div>
+
+    <p class="staff-note">Are you a candidate? <a href="../login.html">Go to the student login</a></p>
+</div>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/auth.js"></script>
+</body>
+</html>
