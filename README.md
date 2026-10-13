@@ -164,7 +164,4 @@ login.html          Student sign-in page
 
 ## License and data handling
 
-No license file is currently included. Add a license before redistributing the
-project if you intend to grant reuse rights. Candidate details, marks and
-placement records are sensitive personal data; only use real records in an
-appropriately secured and authorized environment.
+No license file is currently included
