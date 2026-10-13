@@ -39,30 +39,30 @@ There are no Composer or JavaScript package dependencies in this project.
 
 ## Database configuration
 
-The application reads database settings from environment variables, with
-defaults for the local class-work setup:
+The application loads database settings from a root-level `.env` file (ignored
+by Git), then falls back to environment variables and local defaults. Copy
+`.env.example` to `.env` and set the password for your local database:
 
 | Variable | Description | Example for local development |
 | --- | --- | --- |
 | `IOSSS_DB_HOST` | MySQL/MariaDB hostname | `localhost` |
 | `IOSSS_DB_USER` | Database username | `root` |
-| `IOSSS_DB_PASS` | Database password | Set locally; there is no password default |
+| `IOSSS_DB_PASS` | Database password | Your local MySQL/MariaDB password |
 | `IOSSS_DB_NAME` | Database/schema name | `iosss_db` |
 
-The host, username and database name defaults are for the local assignment
-environment. Set `IOSSS_DB_PASS` in your local shell or PHP environment before
-connecting to the database. A password is deliberately not stored in this
-repository.
+The host, username and database name in `.env.example` are defaults for the
+local assignment environment. Edit your ignored `.env` file with your actual
+local settings. Environment variables named `IOSSS_DB_HOST`, `IOSSS_DB_USER`,
+`IOSSS_DB_PASS`, or `IOSSS_DB_NAME` override the corresponding `.env` values.
 
-For a local development server, provide the database password when starting
-PHP (replace the example value with your local database password):
+For a local development server, start PHP from the project root after setting
+up `.env`:
 
 ```sh
-IOSSS_DB_PASS='your-local-password' php -S 127.0.0.1:8000
+php -S 127.0.0.1:8000
 ```
 
-Then open <http://127.0.0.1:8000/>. Environment assignments on the command
-apply only to that server process.
+Then open <http://127.0.0.1:8000/>.
 
 ### Schema and initial administrator
 
@@ -82,16 +82,14 @@ administrator accounts through the system's staff tools.
 
 1. Install PHP and MySQL/MariaDB, and enable `mysqli`.
 2. Provision a database using a schema compatible with the application.
-3. Set `IOSSS_DB_PASS` in the environment used to start PHP. Set other
-   `IOSSS_DB_*` variables too if your local database settings differ from the
-   defaults.
+3. Copy `.env.example` to `.env` and set the database values for your local
+   MySQL/MariaDB installation.
 4. From the project root, start the local server:
 
    ```sh
    php -S 127.0.0.1:8000
    ```
 
-   Set the environment variables in the same shell before starting PHP.
 5. Visit <http://127.0.0.1:8000/> and sign in to the staff portal at
    <http://127.0.0.1:8000/staff/login.html>.
 6. As the system administrator, configure the selection cycle and schools,
